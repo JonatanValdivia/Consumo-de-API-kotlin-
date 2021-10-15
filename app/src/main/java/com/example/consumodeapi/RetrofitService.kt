@@ -9,4 +9,12 @@ interface RetrofitService {
     // https://viacep.com.br/ws/${}/json/
     @GET("{CEP}/json/") //Esse @get tem uma estrutura
     fun getCEP(@Path("CEP") cep : String) : Call<Cep>
+
+    @GET("{uf}/{cidade}/{logradouro}") //Esse @get tem uma estrutura
+    fun getCEPbyLograodouro(
+            @Path("uf")uf : String,
+            @Path("cidade")cidade: String,
+            @Path("logradouro")logradouro: String) : Call<List<Cep>>
+
+    //@POST()
 }

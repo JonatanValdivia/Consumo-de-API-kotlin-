@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
+        android:id="@+id/btn_buscar_cep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +25,7 @@
         android:text="Buscar"/>
 
     <TextView
+        android:id="@+id/tv_response"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -31,5 +33,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_cep" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Buscar ruas"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_response" />
+
+    <EditText
+        android:id="@+id/et_estado"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:hint="Sigla Estado (Ex.: SP)"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/et_cidade"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:hint="Cidade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_estado" />
+
+    <EditText
+        android:id="@+id/et_rua"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:hint="Rua"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cidade" />
+
+    <Button
+        android:id="@+id/btn_buscar_ruas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Buscar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_rua" />
+
+    <TextView
+        android:id="@+id/text_response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ruas"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_buscar_ruas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
