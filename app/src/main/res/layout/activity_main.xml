@@ -4,91 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/et_cep"
-        android:layout_width="280dp"
+        android:id="@+id/editTextCep"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="number"
         android:hint="CEP"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_buscar_cep"
+        android:id="@+id/buttonBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/et_cep"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Buscar"/>
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="@+id/textViewEndereco"
+        app:layout_constraintStart_toEndOf="@+id/editTextCep"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_response"
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewEndereco"
+        android:layout_width="333dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Endereco"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_cep" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Buscar ruas"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_response" />
+        android:layout_marginTop="16dp"
+        android:text="Endereço"
+        app:layout_constraintStart_toStartOf="@+id/editTextCep"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCep" />
 
     <EditText
-        android:id="@+id/et_estado"
-        android:layout_width="280dp"
+        android:id="@+id/nomeRua"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Sigla Estado (Ex.: SP)"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Nome da Rua"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textViewEndereco"
+        app:layout_constraintStart_toStartOf="@+id/textViewEndereco"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEndereco" />
 
     <EditText
-        android:id="@+id/et_cidade"
-        android:layout_width="280dp"
+        android:id="@+id/nomeCidade"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Cidade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_estado" />
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Nome da Cidade"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/nomeRua"
+        app:layout_constraintStart_toEndOf="@+id/siglaEstado"
+        app:layout_constraintTop_toBottomOf="@+id/nomeRua" />
 
     <EditText
-        android:id="@+id/et_rua"
-        android:layout_width="280dp"
+        android:id="@+id/siglaEstado"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:hint="Rua"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_cidade" />
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Sigla"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/nomeRua"
+        app:layout_constraintTop_toBottomOf="@+id/nomeRua" />
 
     <Button
-        android:id="@+id/btn_buscar_ruas"
+        android:id="@+id/btnBuscarCep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Buscar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_rua" />
+        android:text="BUSCAR CEP"
+        app:layout_constraintEnd_toEndOf="@+id/nomeCidade"
+        app:layout_constraintTop_toBottomOf="@+id/nomeCidade" />
 
-    <TextView
-        android:id="@+id/text_response"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_ceps"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ruas"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_buscar_ruas" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscarCep"
+        app:layout_constraintVertical_bias="0.087"
+        tools:listitem="@layout/ceps_recycler_view_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

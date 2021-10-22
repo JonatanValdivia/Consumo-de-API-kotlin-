@@ -1,4 +1,4 @@
-package com.example.consumodeapi
+package com.example.retrofitviacep
 
 import org.junit.Test
 
